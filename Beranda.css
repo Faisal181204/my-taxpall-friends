@@ -1,0 +1,100 @@
+      body {
+        margin: 0;
+        padding: 0;
+        background: url("MY\ TAXPAL\ beranda\ 233.png") no-repeat center
+          center/cover;
+        font-family: Arial, sans-serif;
+        color: white;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        font-size: 2rem;
+      }
+
+      .logo img {
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+      }
+
+      .nav-icons img {
+        width: 50px;
+        height: 50px;
+        margin-left: 20px;
+        vertical-align: middle;
+        cursor: pointer;
+      }
+
+      .content {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 80vh;
+        padding-right: 80px;
+        text-align: right;
+      }
+
+      .text-area {
+        max-width: 1000px;
+      }
+
+      h1 {
+        font-size: 3rem;
+        margin: 0;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+      }
+
+      p {
+        margin-top: 15px;
+        margin-bottom: 30px;
+        font-size: 1rem;
+      }
+
+      .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-end;
+      }
+
+      .button {
+        padding: 12px 24px;
+        border: 2px solid white;
+        border-radius: 6px;
+        background: transparent;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .button:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      .button.small {
+        padding: 8px 30px;
+        margin: 2px;
+        font-size: 0.9rem;
+      }
+
+      footer {
+        text-align: right;
+        margin-top: 10px;
+        padding: 20px 40px;
+        font-size: 0.8rem;
+        color: white;
+      }
