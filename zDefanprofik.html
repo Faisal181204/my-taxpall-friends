@@ -113,20 +113,16 @@
 
       .image-section {
         position: absolute;
-        right: -200px; /* bisa kamu ubah sesuka hati */
-        bottom: 93px; /* contoh posisi di bawah */
-        width: auto;
-        height: 100%;
-        display: flex;
-        align-items: flex-end; /* agar gambar tetap dasar */
-        justify-content: flex-end;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        pointer-events: none; /* opsional jika gambar tidak interaktif */
       }
 
       .image-section img {
-        height: 180%;
-        max-height: 650px; /* agar tidak terlalu besar */
+        height: 480px;
+        max-width: 100%;
         object-fit: contain;
-        pointer-events: none;
       }
 
       footer {
