@@ -12,15 +12,14 @@
         padding: 0;
       }
 
-      html,
-      body {
+      html, body {
         height: 100%;
-        overflow: hidden; /* Menghilangkan scroll */
+        overflow: hidden;
         font-family: Arial, sans-serif;
       }
 
       body {
-        background: url("faisal\ bg.png") no-repeat center center fixed;
+        background: url("faisal bg.png") no-repeat center center fixed;
         background-size: cover;
         display: flex;
         flex-direction: column;
@@ -61,14 +60,36 @@
         padding: 40px;
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
         min-height: 400px;
+        gap: 20px;
       }
 
       .text-section {
-        position: relative;
-        max-width: 55%;
+        flex: 1 1 45%;
         color: #333;
+      }
+
+      .button-section {
+        flex: 1 1 45%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .image-section {
+        flex: 1 1 45%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .image-section img {
+        max-height: 200px;
+        width: auto;
+        object-fit: contain;
+        pointer-events: none;
       }
 
       h1 {
@@ -85,14 +106,13 @@
       p {
         font-style: oblique;
         font-size: 16px;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
       }
 
       button {
         display: block;
         width: 100%;
         max-width: 300px;
-        margin-bottom: 15px;
         padding: 15px;
         font-size: 16px;
         border-radius: 25px;
@@ -112,24 +132,6 @@
         font-weight: bold;
       }
 
-      .image-section {
-        position: absolute;
-        right: 20px; /* bisa kamu ubah sesuka hati */
-        bottom: 20px; /* contoh posisi di bawah */
-        width: auto;
-        height: auto;
-        display: flex;
-        align-items: flex-end; /* agar gambar tetap dasar */
-        justify-content: flex-end;
-      }
-
-      .image-section img {
-        width: 100%;
-        max-height: 200px; /* agar tidak terlalu besar */
-        object-fit: contain;
-        pointer-events: none;
-      }
-
       footer {
         text-align: left;
         font-size: 0.8rem;
@@ -144,38 +146,19 @@
       @media screen and (max-width: 768px) {
         .content-box {
           flex-direction: column;
+          align-items: center;
           text-align: center;
         }
 
-        .navigation-buttons {
-          margin-top: 20px;
-          display: flex;
-          gap: 10px;
-        }
-
-        .arrow-btn {
-          background-color: #1f6b2b;
-          color: white;
-          font-size: 24px;
-          padding: 10px 20px;
-          border-radius: 50px;
-          text-decoration: none;
-          font-weight: bold;
-          transition: background-color 0.3s ease;
-        }
-
-        .arrow-btn:hover {
-          background-color: #3d8145;
-        }
-
         .text-section,
-        .image-section {
+        .image-section,
+        .button-section {
+          flex: 1 1 100%;
           max-width: 100%;
         }
 
         .image-section img {
-          height: auto;
-          max-height: 300px;
+          max-height: 250px;
         }
       }
     </style>
@@ -183,47 +166,36 @@
   <body>
     <!-- Header -->
     <div class="header">
-      <img
-        src="Screenshot_2025-05-02_092324-removebg-preview.png"
-        alt="Logo My TaxPal"
-      />
+      <img src="Screenshot_2025-05-02_092324-removebg-preview.png" alt="Logo My TaxPal" />
       <span>MyTaxpal</span>
     </div>
 
     <!-- Konten Utama -->
     <div class="main-container">
       <div class="content-box">
+        <!-- TEXT -->
         <div class="text-section">
           <h1>FAISAL HADI SAIK</h1>
-          <h2>FRAMEWORK PROGAMMER</h2>
+          <h2>FRAMEWORK PROGRAMMER</h2>
           <p>
-            Saya adalah mahasiswa Universitas Siliwangi yang berdomisili di Kota
-            Tasikmalaya. Memiliki semangat belajar tinggi, khususnya di
-            bidangTeknologi Informasi Jaringan Komputer. Saya percaya bahwa
-            perubahan besar berawal dari langkah kecil. Dengan semangat belajar
-            dan kolaborasi, saya terus mencari ruang untuk tumbuh melalui
-            proyek-proyek kreatif dan pengalaman baru yang membangun. Moto hidup
-            saya "Belajar bukan kewajiban, tapi kebutuhan untuk
-            menjadi lebih baik.".
+            Saya adalah mahasiswa Universitas Siliwangi yang berdomisili di Kota Tasikmalaya. Memiliki semangat belajar tinggi, khususnya di bidang Teknologi Informasi Jaringan Komputer. Saya percaya bahwa perubahan besar berawal dari langkah kecil. Dengan semangat belajar dan kolaborasi, saya terus mencari ruang untuk tumbuh melalui proyek-proyek kreatif dan pengalaman baru yang membangun. Moto hidup saya "Belajar bukan kewajiban, tapi kebutuhan untuk menjadi lebih baik.".
           </p>
-          <div class=''>
-          <a href="zFiqriprofile.html">
-            <button>Selanjutnya</button>
-          </a>
-          <a href="zFadilprofile.html">
-            <button>Sebelumnya</button>
-          </a>
-          <a href="Aboutusawal.html">
-            <button class="back-btn">KEMBALI</button>
-          </a>
-          </div>
-          <div class="image-section">
-            <img src="FAISAL gans.png" alt="Foto isal" />
         </div>
+
+        <!-- IMAGE -->
+        <div class="image-section">
+          <img src="FAISAL gans.png" alt="Foto Isal" />
+        </div>
+
+        <!-- BUTTON -->
+        <div class="button-section">
+          <a href="zFiqriprofile.html"><button>Selanjutnya</button></a>
+          <a href="zFadilprofile.html"><button>Sebelumnya</button></a>
+          <a href="Aboutusawal.html"><button class="back-btn">KEMBALI</button></a>
         </div>
       </div>
     </div>
 
-    <footer>© 2025 My Taxpall. All rights reserved.</footer>
+    <footer>© 2025 My Taxpal. All rights reserved.</footer>
   </body>
 </html>
