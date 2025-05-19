@@ -60,36 +60,41 @@
         padding: 40px;
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
+        align-items: stretch;
         flex-wrap: wrap;
         min-height: 400px;
         gap: 20px;
       }
-
+      
+      .left-section {
+      flex: 1 1 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      }
+      
       .text-section {
-        flex: 1 1 45%;
-        color: #333;
+      color: #333;
       }
 
       .button-section {
-        flex: 1 1 45%;
+        margin-top: 20px;
         display: flex;
         flex-direction: column;
         gap: 15px;
       }
 
       .image-section {
-        flex: 1 1 45%;
+        flex: 1 1 40%;
         display: flex;
         justify-content: center;
         align-items: center;
       }
 
       .image-section img {
-        max-height: 200px;
-        width: auto;
+        max-width: 100%;
+        max-height: 100%;
         object-fit: contain;
-        pointer-events: none;
       }
 
       h1 {
@@ -150,15 +155,25 @@
           text-align: center;
         }
 
-        .text-section,
-        .image-section,
-        .button-section {
-          flex: 1 1 100%;
-          max-width: 100%;
+        .left-section,
+        .image-section {
+        flex: 1 1 100%;
+        max-width: 100%;
         }
-
+        
         .image-section img {
           max-height: 250px;
+          width: auto;
+        }
+        
+        .button-section {
+        width: 100%;
+        align-items: center;
+        }
+
+        button {
+        width: 100%;
+        max-width: 300px;
         }
       }
     </style>
@@ -173,18 +188,18 @@
     <!-- Konten Utama -->
     <div class="main-container">
       <div class="content-box">
+        <div class="left-section">
         <!-- TEXT -->
         <div class="text-section">
           <h1>FAISAL HADI SAIK</h1>
           <h2>FRAMEWORK PROGRAMMER</h2>
           <p>
-            Saya adalah mahasiswa Universitas Siliwangi yang berdomisili di Kota Tasikmalaya. Memiliki semangat belajar tinggi, khususnya di bidang Teknologi Informasi Jaringan Komputer. Saya percaya bahwa perubahan besar berawal dari langkah kecil. Dengan semangat belajar dan kolaborasi, saya terus mencari ruang untuk tumbuh melalui proyek-proyek kreatif dan pengalaman baru yang membangun. Moto hidup saya "Belajar bukan kewajiban, tapi kebutuhan untuk menjadi lebih baik.".
+            Saya adalah mahasiswa Universitas Siliwangi yang berdomisili di Kota Tasikmalaya. 
+            Memiliki semangat belajar tinggi, khususnya di bidang Teknologi Informasi Jaringan Komputer. 
+            Saya percaya bahwa perubahan besar berawal dari langkah kecil. 
+            Dengan semangat belajar dan kolaborasi, saya terus mencari ruang untuk tumbuh melalui proyek-proyek kreatif dan pengalaman baru yang membangun. 
+            Moto hidup saya "Belajar bukan kewajiban, tapi kebutuhan untuk menjadi lebih baik.".
           </p>
-        </div>
-
-        <!-- IMAGE -->
-        <div class="image-section">
-          <img src="FAISAL gans.png" alt="Foto Isal" />
         </div>
 
         <!-- BUTTON -->
@@ -194,6 +209,11 @@
           <a href="Aboutusawal.html"><button class="back-btn">KEMBALI</button></a>
         </div>
       </div>
+        <!-- IMAGE -->
+        <div class="image-section">
+          <img src="FAISAL gans.png" alt="Foto Isal" />
+        </div>
+    </div>
     </div>
 
     <footer>© 2025 My Taxpal. All rights reserved.</footer>
