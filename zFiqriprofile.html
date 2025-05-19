@@ -12,20 +12,17 @@
         padding: 0;
       }
 
-      html,
-      body {
+      html, body {
         height: 100%;
-        overflow: hidden; /* Menghilangkan scroll */
+        overflow: auto;
         font-family: Arial, sans-serif;
       }
 
       body {
-        background: url("Bupati%20Fiqri.png") no-repeat center center
-          fixed;
+        background: url("Bupati%20Fiqri.png") no-repeat center center fixed;
         background-size: cover;
         display: flex;
         flex-direction: column;
-        overflow: auto;
       }
 
       .header {
@@ -55,6 +52,7 @@
       }
 
       .content-box {
+        position: relative;
         width: 100%;
         max-width: 1100px;
         background-color: rgba(255, 255, 255, 0.95);
@@ -62,13 +60,43 @@
         padding: 40px;
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: stretch;
+        flex-wrap: wrap;
         min-height: 400px;
+        gap: 20px;
+      }
+      
+      .left-section {
+      flex: 1 1 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      }
+      
+      .text-section {
+      color: #333;
       }
 
-      .text-section {
-        max-width: 55%;
-        color: #333;
+      .button-section {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .image-section {
+        flex: 1 1 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        overflow: hidden;
+      }
+
+      .image-section img {
+        width: 100%;
+        height: 80%;
+        object-fit: cover;
       }
 
       h1 {
@@ -85,14 +113,13 @@
       p {
         font-style: oblique;
         font-size: 16px;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
       }
 
       button {
         display: block;
         width: 100%;
-        max-width: 300px;
-        margin-bottom: 15px;
+        max-width: 450px;
         padding: 15px;
         font-size: 16px;
         border-radius: 25px;
@@ -112,25 +139,6 @@
         font-weight: bold;
       }
 
-      .image-section {
-        position: absolute;
-        right: -150px; /* bisa kamu ubah sesuka hati */
-        bottom: 100px; /* contoh posisi di bawah */
-        width: auto;
-        height: 100%;
-        display: flex;
-        align-items: flex-end; /* agar gambar tetap dasar */
-        justify-content: flex-end;
-        pointer-events: none;
-      }
-
-      .image-section img {
-        height: 200%;
-        max-height: 640px; /* agar tidak terlalu besar */
-        object-fit: contain;
-        pointer-events: none;
-      }
-
       footer {
         text-align: left;
         font-size: 0.8rem;
@@ -145,37 +153,40 @@
       @media screen and (max-width: 768px) {
         .content-box {
           flex-direction: column;
+          align-items: center;
           text-align: center;
         }
 
-        .navigation-buttons {
-          margin-top: 20px;
-          display: flex;
-          gap: 10px;
-        }
-
-        .arrow-btn {
-          background-color: #1f6b2b;
-          color: white;
-          font-size: 24px;
-          padding: 10px 20px;
-          border-radius: 50px;
-          text-decoration: none;
-          font-weight: bold;
-          transition: background-color 0.3s ease;
-        }
-
-        .arrow-btn:hover {
-          background-color: #3d8145;
-        }
-
-        .text-section,
         .image-section {
-          max-width: 100%;
+        order: 1;
+        width: 100%;
+        max-height: 300px;
         }
 
+        .left-section{
+        order: 2;
+        width: 100%;
+        }
+        
+        .image-section {
+        flex: 1 1 100%;
+        max-width: 100%;
+        }
+        
         .image-section img {
-          height: 300px;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+        
+        .button-section {
+        order: 3;
+        width: 100%;
+        }
+
+        button {
+        width: 100%;
+        max-width: 100%;
         }
       }
     </style>
@@ -183,19 +194,18 @@
   <body>
     <!-- Header -->
     <div class="header">
-      <img
-        src="Screenshot_2025-05-02_092324-removebg-preview.png"
-        alt="Logo My TaxPal"
-      />
+      <img src="Screenshot_2025-05-02_092324-removebg-preview.png" alt="Logo My TaxPal" />
       <span>MyTaxpal</span>
     </div>
 
     <!-- Konten Utama -->
     <div class="main-container">
       <div class="content-box">
+        <div class="left-section">
+        <!-- TEXT -->
         <div class="text-section">
           <h1>FIQRI MOCHAMAD FADILAH</h1>
-          <h2>UI/UX</h2>
+          <h2>UI/UX DESIGNER</h2>
           <p>
             Halo semuanya, Perkenalkan saya Fiqri dan disini saya sebagai
             mahasiswa Informatika 2024 Universitas Siliwangi. Di sini saya
@@ -205,6 +215,10 @@
             Me Now", meskipun kita bukan ahli dalam satu bidang, kita bisa
             menguasai banyak hal lewat kemauan dan waktu.
           </p>
+        </div>
+
+        <!-- BUTTON -->
+        <div class="button-section">
           <a href="zIrsyadprofil.html">
             <button>Selanjutnya</button>
           </a>
@@ -215,12 +229,14 @@
             <button class="back-btn">KEMBALI</button>
           </a>
         </div>
+      </div>
+        <!-- IMAGE -->
         <div class="image-section">
           <img src="Fiqri Gans.png" alt="Foto Fiqri" />
         </div>
-      </div>
+    </div>
     </div>
 
-    <footer>© 2025 My Taxpall. All rights reserved.</footer>
+    <footer>© 2025 My Taxpal. All rights reserved.</footer>
   </body>
 </html>
