@@ -12,10 +12,9 @@
         padding: 0;
       }
 
-      html,
-      body {
+      html, body {
         height: 100%;
-        overflow: hidden; /* Menghilangkan scroll */
+        overflow: auto; 
         font-family: Arial, sans-serif;
       }
 
@@ -53,6 +52,7 @@
       }
 
       .content-box {
+        position: relative;
         width: 100%;
         max-width: 1100px;
         background-color: rgba(255, 255, 255, 0.95);
@@ -60,15 +60,45 @@
         padding: 40px;
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: stretch;
+        flex-wrap: wrap;
         min-height: 400px;
+        gap: 20px;
       }
 
+      .left-section {
+        flex: 1 1 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      
       .text-section {
-        max-width: 55%;
         color: #333;
       }
 
+      .button-section {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .image-section {
+        flex: 1 1 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        overflow: hidden;
+      }
+
+      .image-section img {
+        width: 100%;
+        height: 80%;
+        object-fit: cover;
+      }
+      
       h1 {
         color: #1f6b2b;
         font-size: 36px;
@@ -89,7 +119,7 @@
       button {
         display: block;
         width: 100%;
-        max-width: 300px;
+        max-width: 450px;
         margin-bottom: 15px;
         padding: 15px;
         font-size: 16px;
@@ -110,24 +140,6 @@
         font-weight: bold;
       }
 
-      .image-section {
-        position: absolute;
-        right: -150px; /* bisa kamu ubah sesuka hati */
-        bottom: 20px; /* contoh posisi di bawah */
-        width: auto;
-        height: 100%;
-        display: flex;
-        align-items: flex-end; /* agar gambar tetap dasar */
-        justify-content: flex-end;
-      }
-
-      .image-section img {
-        height: 180%;
-        max-height: 650px; /* agar tidak terlalu besar */
-        object-fit: contain;
-        pointer-events: none;
-      }
-
       footer {
         text-align: left;
         font-size: 0.8rem;
@@ -142,37 +154,40 @@
       @media screen and (max-width: 768px) {
         .content-box {
           flex-direction: column;
+          align-items: center;
           text-align: center;
         }
 
-        .navigation-buttons {
-          margin-top: 20px;
-          display: flex;
-          gap: 10px;
-        }
-
-        .arrow-btn {
-          background-color: #1f6b2b;
-          color: white;
-          font-size: 24px;
-          padding: 10px 20px;
-          border-radius: 50px;
-          text-decoration: none;
-          font-weight: bold;
-          transition: background-color 0.3s ease;
-        }
-
-        .arrow-btn:hover {
-          background-color: #3d8145;
-        }
-
-        .text-section,
         .image-section {
-          max-width: 100%;
+        order: 1;
+        width: 100%;
+        max-height: 300px;
         }
 
+        .left-section{
+        order: 2;
+        width: 100%;
+        }
+        
+        .image-section {
+        flex: 1 1 100%;
+        max-width: 100%;
+        }
+        
         .image-section img {
-          height: 300px;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+        
+        .button-section {
+        order: 3;
+        width: 100%;
+        }
+
+        button {
+        width: 100%;
+        max-width: 100%;
         }
       }
     </style>
@@ -190,6 +205,7 @@
     <!-- Konten Utama -->
     <div class="main-container">
       <div class="content-box">
+        <div class="left-section">
         <div class="text-section">
           <h1>MUHAMMAD FADIL NUR WAHID</h1>
           <h2>PARAPHRASING</h2>
@@ -204,6 +220,8 @@
             memahami bidang ini dan menemukan arah yang tepat untuk
             dikembangkan ke depannya.
           </p>
+        </div>
+        <div class="button-section">
           <a href="zFaisalprofile.html">
             <button>Selanjutnya</button>
           </a>
@@ -213,6 +231,7 @@
           <a href="Aboutusawal.html">
             <button class="back-btn">KEMBALI</button>
           </a>
+        </div>
         </div>
         <div class="image-section">
           <img src="14.png" alt="Foto padil" />
