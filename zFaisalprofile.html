@@ -157,26 +157,38 @@
           text-align: center;
         }
 
-        .left-section,
+        .image-section {
+        order: 1;
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        }
+
+        .left-section{
+        order: 2;
+        width: 100%;
+        }
+        
         .image-section {
         flex: 1 1 100%;
         max-width: 100%;
         }
         
         .image-section img {
-          height: auto;
-          max-height: 300px;
-          width: auto;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
         }
         
         .button-section {
+        order: 3;
         width: 100%;
         align-items: center;
         }
 
         button {
         width: 100%;
-        max-width: 300px;
+        max-width: none;
         }
       }
     </style>
